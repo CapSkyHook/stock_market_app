@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BackboneDemo2::Application.load_tasks
+TrelloClone::Application.load_tasks

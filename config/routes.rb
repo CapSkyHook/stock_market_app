@@ -1,11 +1,15 @@
-BackboneDemo2::Application.routes.draw do
-  root :to => "site#root"
+TrelloClone::Application.routes.draw do
+  root to: 'static_pages#root'
 
-  namespace :api, :defaults => { :format => :json } do
-    resources :todos, :only => [:create, :destroy, :index, :show, :update] do
-      resources :comments, :only => [:index]
-    end
+  resources :users
+  resource :session
 
-    resources :comments, :only => [:create, :destroy, :show, :update]
+  namespace :api, defaults: { format: :json } do
+    resources :boards, except: [:new, :edit]
+    resources :lists, only: [:create, :update, :destroy]
+    resources :cards, only: [:create, :show, :update, :destroy]
+    resources :items, only: [:create, :update, :destroy]
+    # resources :board_memberships
+    # resources :card_assignments
   end
 end

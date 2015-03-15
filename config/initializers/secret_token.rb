@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-BackboneDemo2::Application.config.secret_key_base = '7c6d57cae998b11b537267d6c6071f5d26f193df53d20a9e48c04443e2da282a70fb21b0959c248c450c073fd6e2406e13e366ac1f574bcca457c70a0fa4c0f6'
+TrelloClone::Application.config.secret_key_base = 'f2d572e788cd531fe1769ff0b8a32497677340618e561efc07ffa25648d58d2da1ce00ed770ea099ebae3d5a15609635afe381085f0d1629dc83c4be3f95fd92'

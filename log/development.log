@@ -1,0 +1,113 @@
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (119.1ms)[0m  [1mDROP DATABASE IF EXISTS "trello_dev"[0m
+  [1m[35m (116.0ms)[0m  DROP DATABASE IF EXISTS "trello_test"
+  [1m[36m (356.5ms)[0m  [1mCREATE DATABASE "trello_dev" ENCODING = 'utf8'[0m
+  [1m[35m (265.6ms)[0m  CREATE DATABASE "trello_test" ENCODING = 'utf8'
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (13.5ms)[0m  CREATE TABLE "board_memberships" ("id" serial primary key, "user_id" integer NOT NULL, "board_id" integer NOT NULL, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.7ms)[0m  [1mCREATE UNIQUE INDEX "index_board_memberships_on_user_id_and_board_id" ON "board_memberships" USING btree ("user_id", "board_id")[0m
+  [1m[35m (9.6ms)[0m  CREATE TABLE "boards" ("id" serial primary key, "title" character varying(255) NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.2ms)[0m  [1mCREATE INDEX "index_boards_on_user_id" ON "boards" USING btree ("user_id")[0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "card_assignments" ("id" serial primary key, "card_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.4ms)[0m  [1mCREATE UNIQUE INDEX "index_card_assignments_on_card_id_and_user_id" ON "card_assignments" USING btree ("card_id", "user_id")[0m
+  [1m[35m (23.4ms)[0m  CREATE TABLE "cards" ("id" serial primary key, "title" character varying(255) NOT NULL, "list_id" integer NOT NULL, "description" text, "ord" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (9.9ms)[0m  [1mCREATE INDEX "index_cards_on_list_id" ON "cards" USING btree ("list_id")[0m
+  [1m[35m (6.2ms)[0m  CREATE TABLE "items" ("id" serial primary key, "title" character varying(255) NOT NULL, "card_id" integer NOT NULL, "done" boolean DEFAULT 'f', "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (1.5ms)[0m  [1mCREATE INDEX "index_items_on_card_id" ON "items" USING btree ("card_id")[0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "lists" ("id" serial primary key, "title" character varying(255) NOT NULL, "board_id" integer NOT NULL, "ord" float DEFAULT 0.0, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (0.8ms)[0m  [1mCREATE INDEX "index_lists_on_board_id" ON "lists" USING btree ("board_id")[0m
+  [1m[35m (2.2ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) NOT NULL, "password_digest" character varying(255) NOT NULL, "session_token" character varying(255) NOT NULL, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (2.3ms)[0m  [1mCREATE INDEX "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (5.5ms)[0m  CREATE INDEX "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140716203208')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140708170528')[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140708170608')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140708170628')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140708170656')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140708170720')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140708170753')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140708170808')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'ripe@gmail.com' LIMIT 1
+  [1m[36mSQL (32.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "session_token", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:05 UTC +00:00], ["email", "ripe@gmail.com"], ["password_digest", "$2a$10$ydaeQdT0rXU1/1aFEFYGV.ZXlN04iJRc2l1nSDhDITKempwhFsHWq"], ["session_token", "jKHxruzn65h8L1rHK7iNWA"], ["updated_at", Sun, 15 Mar 2015 04:00:05 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'thejamaicandave@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "session_token", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["email", "thejamaicandave@gmail.com"], ["password_digest", "$2a$10$LsjaEwiWq5vYsZRJmtO3b.hJqCa0Z5KZFHBdHDAAjSHchD4FzmXDW"], ["session_token", "mDCBfV3NP50Zu29Ecu5HTw"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (11.9ms)[0m  [1mINSERT INTO "boards" ("created_at", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["title", "Workout"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["user_id", 1]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "boards" ("created_at", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["title", "Jamaica"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["user_id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "boards" ("created_at", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["title", "Bouncy"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mBoard Load (0.4ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 ORDER BY "boards"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "lists" ("board_id", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["board_id", 1], ["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["title", "todo"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mBoard Load (0.8ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 ORDER BY "boards"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "lists" ("board_id", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["board_id", 1], ["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["title", "doing"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 ORDER BY "boards"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "lists" ("board_id", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["board_id", 1], ["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["title", "done"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "feel the burn"], ["list_id", 3], ["title", "squats"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "ooh ouch"], ["list_id", 3], ["title", "pushups"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "ouchy"], ["list_id", 3], ["title", "situps"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "feel the burn"], ["list_id", 1], ["title", "squats"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "ooh ouch"], ["list_id", 1], ["title", "pushups"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "ouchy"], ["list_id", 1], ["title", "situps"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "feel the burn"], ["list_id", 2], ["title", "squats"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "ooh ouch"], ["list_id", 2], ["title", "pushups"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("created_at", "description", "list_id", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["description", "ouchy"], ["list_id", 2], ["title", "situps"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mCard Load (1.6ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 ORDER BY "cards"."ord" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "items" ("card_id", "created_at", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["card_id", 1], ["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["title", "mocha"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 ORDER BY "cards"."ord" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("card_id", "created_at", "done", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["card_id", 1], ["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["done", true], ["title", "mocha"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 ORDER BY "cards"."ord" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("card_id", "created_at", "done", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["card_id", 1], ["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["done", true], ["title", "cookie"], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN "board_memberships" ON "users"."id" = "board_memberships"."user_id" WHERE "board_memberships"."board_id" = $1  [["board_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (12.3ms)[0m  INSERT INTO "board_memberships" ("board_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"  [["board_id", 1], ["created_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["updated_at", Sun, 15 Mar 2015 04:00:06 UTC +00:00], ["user_id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
