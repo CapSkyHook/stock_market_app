@@ -1,17 +1,32 @@
+<section>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="bet-closed-form">
+				Sorry, betting for today has closed.
+			</div>
+			<div class="valid-bet-form">
 
-<div class='boards-index-title'>
-  <h3>My Boards</h3>
+		          <h2>
+		          Place bet
+		          </h2>
+		    	 <div class="bet form">
+		             <form id="bet-form">
+		              <div class="form-group">
+		                 <input type="text" class="form-control" id="recipient-name" name="boards[title]" required title="Please make a bet.">
+		                 <button class="btn btn-info" type="submit">Place Bet!</button>
+		              </div>
+		             </form>
+				</div>
+			</div>
+
+			<h3>Previous Bets</h3>
+			
+			<ul class='bids'>
+
+			</ul>
+		</div>
+	</div>
 </div>
+</section>
 
-<ul class='boards'>
-  <% boards.each(function (board) { %>
-    <li>
-      <a href="#/boards/<%= board.id %>">
-        <span class='shadow'></span>
-        <span class='details'>        
-          <%= board.escape("title") %>
-        </span>
-      </a>
-    </li>
-  <% }); %>
-</ul>
