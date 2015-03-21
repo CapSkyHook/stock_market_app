@@ -9,7 +9,6 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addBidItem);
-
   },
 
   render: function () {
@@ -20,7 +19,7 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
 
     this.$el.html(content);
     var current_time = new Date();
-    if (current_time.getHours() < 16 && current_time.getMinutes() < 30 ||
+    if (current_time.getHours() <= 16 && current_time.getMinutes() <= 30 ||
         current_time.getHours() > 9) {
       this.$(".bet-closed-form").addClass("hideit");
       this.$(".valid-bet-form").removeClass("hideit");
@@ -33,8 +32,16 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
   },
 
   submit: function (event){
+    var that = this;
     event.preventDefault();
-    // var model = new StockMarketApp.Models
+    var attrs = $(event.target).serializeJSON();
+    var model = new StockMarketApp.Models.Board();
+    model.set(attrs);
+    model.save({}, {
+      success: function () {
+        that.collection.fetch();
+      }
+    });
     
   },
 
