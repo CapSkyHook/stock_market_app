@@ -1,0 +1,4 @@
+-create method ot make new bids
+-make way to get bids
+-create bank for user that gets changed when bid is placed
+-

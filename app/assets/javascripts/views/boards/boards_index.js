@@ -19,14 +19,22 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
     });
 
     this.$el.html(content);
-        // this.$(".post-pic").attr("style", "");
-
+    var current_time = new Date();
+    if (current_time.getHours() < 16 && current_time.getMinutes() < 30 ||
+        current_time.getHours() > 9) {
+      this.$(".bet-closed-form").addClass("hideit");
+      this.$(".valid-bet-form").removeClass("hideit");
+    } else {
+      this.$(".bet-closed-form").removeClass("hideit");
+      this.$(".valid-bet-form").addClass("hideit");
+    }
 
     return this;
   },
 
   submit: function (event){
     event.preventDefault();
+    // var model = new StockMarketApp.Models
     
   },
 
