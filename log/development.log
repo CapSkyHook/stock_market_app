@@ -80101,3 +80101,843 @@ Processing by BoardsController#index as JSON
   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1[0m
   [1m[35mBoard Load (0.2ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."user_id" = $1  [["user_id", 13]]
 Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-22 23:48:24 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1[0m
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 506ms (Views: 503.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.accordion.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.button.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.menu.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.autocomplete.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.resizable.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.dialog.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.progressbar.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.selectable.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.slider.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.spinner.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.tabs.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.base.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.tooltip.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.all.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/jquery.serializeJSON.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/boards/bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/stock_market_app.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/boards/current_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/boards/index.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/boards/start_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/layout/dropdown.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/layout/_form.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/utils/composite_view.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/collections/boards.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/models/board.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/views/boards/bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/collections/stocks.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/views/boards/boards_index.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/views/boards/start_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/views/boards/curr_board_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/models/stock.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (5.8ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 29ms (Views: 22.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/boards" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+Processing by BoardsController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1[0m
+  [1m[35mBoard Load (0.2ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."user_id" = $1  [["user_id", 13]]
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-03-22 23:48:25 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (0.5ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+Completed 200 OK in 105ms (Views: 103.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.autocomplete.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.menu.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.accordion.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.resizable.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.button.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.progressbar.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.dialog.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.slider.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.selectable.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.spinner.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.tabs.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.tooltip.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.base.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.all.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/jquery.serializeJSON.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:42 -0700
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/boards/bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/boards/current_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/stock_market_app.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/boards/index.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/boards/start_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/layout/_form.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/layout/dropdown.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/utils/composite_view.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/models/board.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/models/stock.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/collections/boards.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/collections/stocks.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/views/boards/bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/views/boards/boards_index.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/views/boards/curr_board_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/views/boards/start_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (1.8ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (1.5ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/boards" for 127.0.0.1 at 2015-03-22 23:48:43 -0700
+Processing by BoardsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1[0m
+  [1m[35mBoard Load (0.3ms)[0m  SELECT "boards".* FROM "boards" WHERE "boards"."user_id" = $1  [["user_id", 13]]
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-22 23:50:30 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1[0m
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.ui.menu.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.autocomplete.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.button.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.accordion.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.dialog.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.selectable.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.progressbar.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.resizable.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.spinner.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.tabs.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.slider.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.tooltip.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.all.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.base.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/jquery.serializeJSON.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/stock_market_app.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/boards/index.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/boards/current_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/boards/bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/boards/start_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/layout/dropdown.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/layout/_form.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/utils/composite_view.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/models/stock.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/models/board.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/collections/boards.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/collections/stocks.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/views/boards/bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/views/boards/boards_index.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/views/boards/curr_board_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/views/boards/start_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (2.9ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (11.1ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 21ms (Views: 9.3ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/boards" for 127.0.0.1 at 2015-03-22 23:50:31 -0700
+Processing by BoardsController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1
+  [1m[36mBoard Load (0.3ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1
+  Rendered static_pages/root.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 101ms (Views: 99.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.accordion.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.menu.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.autocomplete.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.button.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.resizable.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.dialog.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.progressbar.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.selectable.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.tooltip.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.slider.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.tabs.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.base.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.spinner.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.all.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/stocks.css?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.serializeJSON.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/stock_market_app.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/boards/bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/boards/current_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/boards/index.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/layout/_form.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/layout/dropdown.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/boards/start_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/utils/composite_view.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/models/board.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/models/stock.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/collections/boards.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/collections/stocks.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/views/boards/boards_index.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/views/boards/bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/views/boards/curr_board_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/views/boards/start_bid_item.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/stocks.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-03-22 23:50:43 -0700
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-03-22 23:50:44 -0700
+Processing by StocksController#index as JSON
+  [1m[36mStock Load (2.2ms)[0m  [1mSELECT "stocks".* FROM "stocks"[0m
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/boards" for 127.0.0.1 at 2015-03-22 23:50:44 -0700
+Processing by BoardsController#index as JSON
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."session_token" = 'u0T2MeX-FxhlpDdhZIhOdg' LIMIT 1
+  [1m[36mBoard Load (0.2ms)[0m  [1mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = $1[0m  [["user_id", 13]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2015-03-22 23:50:44 -0700
+Processing by StocksController#index as JSON
+  [1m[35mStock Load (0.9ms)[0m  SELECT "stocks".* FROM "stocks"
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.9ms)
