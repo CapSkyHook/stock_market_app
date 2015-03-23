@@ -1,11 +1,16 @@
-
-
 class StocksController < ApplicationController
 	def index
+		data = YahooFinance.quotes(["^GSPC"], [:change_in_percent])[0]
+		render json: data
+	end
+
+	def create
+		data = YahooFinance.quotes(["^GSPC"], [:change_in_percent])[0][:change_in_percent]
+		render json: data
 	end
 
 	def show
-		render json: {percent_change: 0.12}
+		data = YahooFinance.quotes(["^GSPC"], [:change_in_percent])[0][:change_in_percent]
+		render json: data
 	end
-
 end

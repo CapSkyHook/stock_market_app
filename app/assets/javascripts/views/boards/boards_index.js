@@ -5,11 +5,11 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
 
   events: {
     "submit #bet-form": 'submit_allowed'
-    // "submit #bet-form": 'submit'
   },
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addBidItem);
+    this.firstBid = false;
   },
 
   render: function () {
@@ -22,14 +22,16 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
     this.startTable();
 
     var current_time = new Date();
-    if (current_time.getHours() >= 16 && current_time.getMinutes() >= 30 ||
-        current_time.getHours() < 9) {
+    if (current_time.getHours() >= 16 || current_time.getHours() < 9) {
       this.$(".bet-closed-form").addClass("hideit");
       this.$(".already-bet-form").addClass("hideit");
       this.$(".valid-bet-form").removeClass("hideit");
     } else {
       this.$(".bet-closed-form").removeClass("hideit");
       this.$(".valid-bet-form").addClass("hideit");
+      this.$(".already-bet-form").addClass("hideit");
+
+
     }
 
     return this;
@@ -43,7 +45,7 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
     model.set(attrs);
     model.save({}, {
       success: function () {
-
+        $(".bet-input").val("");
         that.collection.fetch();
       }
     });
@@ -56,12 +58,9 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
   },
 
   addBidItem: function (bid){
+    this.firstBid = true;
     var stock = new StockMarketApp.Models.Stock();
-    stock.save({
-      success: function (){
-        console.log("synced");
-      }
-    });
+    stock.save();
     var view = new StockMarketApp.Views.BidItemView({
       model: bid,
       stock: stock
@@ -77,16 +76,16 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
     if (lastBidDate.getHours() >= 16 && (lastBidDate.getDate() - todayDate.getDate() <= 1) ||
           lastBidDate.getHours() < 9 && lastBidDate.getDate() === todayDate.getDate() &&
           (lastBidDate.getTime() - todayDate.getTime() < 10800050)){
-      return true;
-    } else {
       return false;
+    } else {
+      return true;
     }
-
   },
 
   submit_allowed: function (event){
     event.preventDefault();
-    if (this.checkPrevBid()){
+    if (!this.firstBid || this.checkPrevBid()){
+      this.firstBid = true;
       this.submit(event);
     } else {
       $(".valid-bet-form").addClass("hideit")

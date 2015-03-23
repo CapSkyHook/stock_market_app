@@ -12,7 +12,9 @@ gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
-gem 'yahoofinance'
+# gem 'yahoofinance'
+gem "stock_quote"
+gem 'yahoo-finance', require: 'yahoo_finance'
 
 group :doc do
   gem 'sdoc', require: false
