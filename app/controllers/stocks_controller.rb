@@ -1,16 +1,23 @@
 class StocksController < ApplicationController
 	def index
-		data = YahooFinance.quotes(["^GSPC"], [:change_in_percent])[0]
-		render json: data
+		@stocks = Stock.all
+		render json: @stocks
 	end
 
-	def create
-		data = YahooFinance.quotes(["^GSPC"], [:change_in_percent])[0][:change_in_percent]
-		render json: data
-	end
+	 def create
+	    @stock = Stock.new
+	    data = YahooFinance.quotes(["^GSPC"], [:change_in_percent])[0][:change_in_percent]
+	    @stock.percent_change = data
+
+	    if @stock.save
+	      render json: @stock
+	    else
+	      render json: @stock.errors.full_messages, status: :unprocessable_entity
+	    end
+  	end
 
 	def show
-		data = YahooFinance.quotes(["^GSPC"], [:change_in_percent])[0][:change_in_percent]
-		render json: data
+		@stock = Stock.find(params[:id])
+      render json: @stock
 	end
 end

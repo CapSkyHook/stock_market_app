@@ -13,7 +13,8 @@ StockMarketApp.Routers.Router = Backbone.Router.extend({
     ownBids = StockMarketApp.Collections.boards;
     ownBids.fetch();
     var view = new StockMarketApp.Views.BoardsIndex({
-      collection: ownBids
+      collection: ownBids,
+      stocks: stocks
     });
 
     this._swapView(view);
