@@ -8,6 +8,7 @@ StockMarketApp.Views.CurrBidView = Backbone.CompositeView.extend({
 	},
 
 	render: function () {
+		console.log('here')
 		var currentBidValue = parseFloat(this.currentBid.get("title"));
 		var winner = (currentBidValue === this.percentChange ? true : false)
     	var content = this.template({
