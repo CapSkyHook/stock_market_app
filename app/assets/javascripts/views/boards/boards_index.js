@@ -9,13 +9,14 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-          var that = this;
+    var that = this;
     this.stocks = options.stocks.fetch({
      success: function () {that.checkWinner();}
 
     })
     this.listenTo(this.collection, "add", this.addBidItem);
     this.firstBid = false;
+    this.currBidShowing = false;
   },
 
   render: function () {
@@ -49,27 +50,32 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
 
   checkWinner: function () {
     
-    var stock = StockMarketApp.Collections.stocks.last();
-    var percentChange = parseFloat(stock.get("percent_change"));
+    this.stock = StockMarketApp.Collections.stocks.last();
+    this.percentChange = parseFloat(this.stock.get("percent_change"));
     var currBid = StockMarketApp.Collections.boards.last() || null;
     if (currBid){var bidChange = parseFloat(currBid.get("title"))};
-    // this.addCurrBid(percentChange, stock, currBid);
+    if(!this.currBidShowing){
+      this.currBidShowing = true;
+      this.addCurrBid(this.percentChange, this.stock, currBid);
+    };
   },
 
 
   addCurrBid: function (percentChange, stock, currBid){
+    if(this.view){this.removeSubview('.curr-bet', this.view)};
     var currentBid = (currBid ? currBid : null);
-    var view = new StockMarketApp.Views.CurrBidView({
+    this.view = new StockMarketApp.Views.CurrBidView({
       percentChange: percentChange,
       stock: stock,
       currentBid: currentBid
     })
-    this.addSubview('.curr-bet', view)
+    this.addSubview('.curr-bet', this.view);
   },
 
   submit: function (event){
     var that = this;
     event.preventDefault();
+    this.currBidShowing = false;
     stock = new StockMarketApp.Models.Stock();
     stock.save();
     var attrs = $(event.target).serializeJSON();
@@ -91,11 +97,14 @@ StockMarketApp.Views.BoardsIndex = Backbone.CompositeView.extend({
 
   addBidItem: function (bid){
     this.firstBid = true;
+    this.currBidShowing = false;
     var view = new StockMarketApp.Views.BidItemView({
       model: bid,
       stock: this.stock
     })
     this.addSubview('.bids', view)
+    this.checkWinner();
+
   },
 
   checkBidValidity: function (lastBidDate){
